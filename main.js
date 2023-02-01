@@ -309,11 +309,12 @@ const database = [{
     region: 'Toshkent',
     distance: '170 000 km',
     color: 'qora',
-    image: {
-        img1: 'https://kluz-photos.kcdn.online/webp/31/31d03e67-81a1-4079-9a58-3e0da82cf163/1-408x306.jpg',
-        img2: 'https://kluz-photos.kcdn.online/webp/31/31d03e67-81a1-4079-9a58-3e0da82cf163/2-408x306.jpg',
-        img3: 'https://kluz-photos.kcdn.online/webp/31/31d03e67-81a1-4079-9a58-3e0da82cf163/4-408x306.jpg',
-    },
+    image: 'https://kluz-photos.kcdn.online/webp/31/31d03e67-81a1-4079-9a58-3e0da82cf163/1-408x306.jpg',
+    // image: {
+    //     img1: 'https://kluz-photos.kcdn.online/webp/31/31d03e67-81a1-4079-9a58-3e0da82cf163/1-408x306.jpg',
+    //     img2: 'https://kluz-photos.kcdn.online/webp/31/31d03e67-81a1-4079-9a58-3e0da82cf163/2-408x306.jpg',
+    //     img3: 'https://kluz-photos.kcdn.online/webp/31/31d03e67-81a1-4079-9a58-3e0da82cf163/4-408x306.jpg',
+    // },
     transmission: 'Avtomat',
     price: '24 000 $',
 },]
@@ -324,19 +325,82 @@ let elCards = document.querySelector(".div")
 database.forEach((value) => {
     let card =
         `
-       
-    
-        <img src=${value.image.img1}/>
-      
+
+
+        <img src=${value.image}/>
+
         <h2>${value.id}<h2/>
         <h1>${value.name}</h1>
-        <p>${value.company}</p>
-        <p>${value.position}</p>
-        <p>${value.region}</p>
-        <p>${value.distance}</p>
-        <p>${value.color}</p>
-        <p>${value.transmission}</p>
-        <p>${value.price}</p>
+        <h3>${value.cc}</h3>
+        <p>${value.position} pozitsiya</p>
+        <p>viloyat: ${value.region}</p>
+        <p>yurgani: ${value.distance}</p>
+        <p>rangi: ${value.color}</p>
+        <p>uzatma qutisi: ${value.transmission}</p>
+        <h4>narxi:${value.price}</h4>
  `
     elCards.insertAdjacentHTML("beforeend", card)
 })
+let div=document.querySelector(".div")
+let elkomp = document.querySelector("komp")
+function companys(database) {
+    for (let i = 0; i < database.length; i++) {
+        if (database[i].company === 
+            "Chevrolet") {
+            div.innerHTML +=
+        `
+        <img src=${value.image}/>
+        <h2>${value.id}<h2/>
+        <h1>${value.name}</h1>
+        <h3>${value.company}</h3>
+        <p>${value.position} 
+        pozitsiya</p>
+        <p>viloyat: ${value.region}</p>
+        <p>yurgani: ${value.distance}</p>
+        <p>rangi: ${value.color}</p>
+        <p>uzatma qutisi: 
+        ${value.transmission}</p>
+        <h4>narxi:${value.price}</h4>
+        `
+        }
+    }
+}
+
+
+// let box = document.querySelector('.box');
+// let breakfast = document.getElementById('break');
+
+// function renderData(arr) {
+//   for (let i = 0; i < arr.length; i++){
+//     box.innerHTML += `
+//     <img class="rasm" src=${arr[i].img} />
+//     <h2>${arr[i].title}</h2>
+//     `
+//   }
+// }
+
+// // renderData(menu)
+
+
+
+
+
+
+// function showBreakfast(menu) {
+//   for (let i = 0; i < menu.length; i++){
+//     if (menu[i].category === "breakfast") {
+//       box.innerHTML += `
+//       <img class="rasm" src=${menu[i].img} />
+//       <h2>${menu[i].title}</h2>
+//       `
+//     }
+//   }
+// }
+// // showBreakfast(menu)
+
+
+// let input = document.getElementById('value');
+
+// function getInput() {
+//   console.log(input.value);
+// }
